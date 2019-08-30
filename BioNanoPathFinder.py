@@ -886,6 +886,7 @@ def path_to_string(G,path,show_contig = False):
 
     return line
 
+#get paths by making the scaffold graphs, then topo-sorting them, then finding the heaviest path in that DAG
 def get_scaffold_heaviest_paths(contig_alignment_dict,impute,contig_cmaps):
     contig_graphs = {}
     scaffold_heaviest_paths = {}
