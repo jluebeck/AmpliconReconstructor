@@ -156,7 +156,7 @@ def parse_generic_xmap(xmapf,qryLenD,refLenD,swap_Ref_Qry = False):
                     fD["QryLen"],fD["RefLen"] = float(fD["QryLen"]),float(fD["RefLen"])
                 except KeyError:
                     fD["QryLen"] = qryLenD[fD["QryContigID"]]
-                    fD["RefLen"] = refLenD[fD["RefContigID"]][-1]
+                    fD["RefLen"] = refLenD[fD["RefContigID"]]
 
                 fD["QryStartPos"],fD["QryEndPos"] = sorted([float(fD["QryStartPos"]),float(fD["QryEndPos"])])
                 if fD["Orientation"] == "+":
