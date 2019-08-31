@@ -130,7 +130,7 @@ def swap_xmap_RQ(xmapD):
 
 
 #can handle poorly formatted .xmap files, such as those from OMBlast.
-def parse_generic_xmap(xmapf,qryLenD,ref_vects,swap_Ref_Qry = False):
+def parse_generic_xmap(xmapf,qryLenD,refLenD,swap_Ref_Qry = False):
     detailFields = ["XmapEntryID","QryContigID","RefContigID","Orientation","Confidence","QryLen","RefLen",
     "QryStartPos","QryEndPos","RefStartPos","RefEndPos","HitEnum"]
     xmapPair = {}
@@ -156,7 +156,7 @@ def parse_generic_xmap(xmapf,qryLenD,ref_vects,swap_Ref_Qry = False):
                     fD["QryLen"],fD["RefLen"] = float(fD["QryLen"]),float(fD["RefLen"])
                 except KeyError:
                     fD["QryLen"] = qryLenD[fD["QryContigID"]]
-                    fD["RefLen"] = ref_vects[fD["RefContigID"]][-1]
+                    fD["RefLen"] = refLenD[fD["RefContigID"]][-1]
 
                 fD["QryStartPos"],fD["QryEndPos"] = sorted([float(fD["QryStartPos"]),float(fD["QryEndPos"])])
                 if fD["Orientation"] == "+":
