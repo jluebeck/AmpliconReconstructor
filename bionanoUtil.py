@@ -240,7 +240,7 @@ def add_full_reverse_cmaps(cmaps,key_dict):
 #binary search find the label corresponding to some position in a cmap dict.
 def pos_to_label(x, item_cmap):
     arr = [item_cmap[x] for x in range(1,max(item_cmap.keys())+1)]
-    l = 0, r = len(arr)-1
+    l,r = 0,len(arr)-1
     mid = l
     while l <= r: 
         mid = l + (r - l)/2; 
