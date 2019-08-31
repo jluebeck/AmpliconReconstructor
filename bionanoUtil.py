@@ -238,29 +238,11 @@ def add_full_reverse_cmaps(cmaps,key_dict):
         cmaps[new_ID][tot_labs+1] = cmap_len
 
 #binary search find the label corresponding to some position in a cmap dict.
+#return the RIGHT index of bisect (cmap is 1 based)
 def pos_to_label(x, item_cmap):
+    import bisect
     arr = [item_cmap[k] for k in range(1,max(item_cmap.keys())+1)]
-    l,r = 0,len(arr)-1
-    mid = l
-    while l <= r: 
-        mid = l + (r - l)/2; 
-        if arr[mid] == x: 
-            break
-  
-        elif arr[mid] < x: 
-            l = mid + 1
-  
-        else: 
-            r = mid - 1
-      
-    if l > r and arr[mid] != x:
-        import sys
-        sys.stderr.write("Position: " + str(x) + " not present in CMAP\n") 
-        sys.exit()
-
-    else:
-        return mid+1
-
+    return bisect.bisect(arr,x)
 
 def xmap_to_SA_aln(xmapD,outdir,fname_prefix,ref_cmaps,contig_cmaps):
     seg_contig_count = {}
