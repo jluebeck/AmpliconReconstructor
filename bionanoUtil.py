@@ -297,8 +297,8 @@ def xmap_to_SA_aln(xmapD,outdir,fname_prefix,ref_cmaps,contig_cmaps):
             else: 
                 ref_start_label = pos_to_label(fD["RefStartPos"],ref_cmaps[seg_id])
                 contig_start_label = pos_to_label(fD["QryStartPos"],contig_cmaps[contig_id])
-                ref_end_label = pos_to_label(fD["RefStartPos"],ref_cmaps)
-                contig_end_label = pos_to_label(fD["QryEndPos"],contig_cmaps)
+                ref_end_label = pos_to_label(fD["RefStartPos"],ref_cmaps[seg_id])
+                contig_end_label = pos_to_label(fD["QryEndPos"],contig_cmaps[contig_id])
                 alist= [(ref_start_label,contig_start_label),(ref_end_label,contig_end_label)]
 
             #write converted alignment
