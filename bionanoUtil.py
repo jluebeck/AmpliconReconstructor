@@ -239,7 +239,7 @@ def add_full_reverse_cmaps(cmaps,key_dict):
 
 #binary search find the label corresponding to some position in a cmap dict.
 def pos_to_label(x, item_cmap):
-    arr = [item_cmap[x] for x in range(1,max(item_cmap.keys())+1)]
+    arr = [item_cmap[k] for k in range(1,max(item_cmap.keys())+1)]
     l,r = 0,len(arr)-1
     mid = l
     while l <= r: 
@@ -255,7 +255,7 @@ def pos_to_label(x, item_cmap):
       
     if l > r and arr[mid] != x:
         import sys
-        sys.stderr.write("Position: " + str(x) + "not present in CMAP\n") 
+        sys.stderr.write("Position: " + str(x) + " not present in CMAP\n") 
         sys.exit()
 
     else:
