@@ -254,6 +254,7 @@ def pos_to_label(x, item_cmap):
             r = mid - 1
       
     if l > r and arr[mid] != x:
+        import sys
         sys.stderr.write("Position: " + str(position) + "not present in CMAP\n") 
         sys.exit()
 
