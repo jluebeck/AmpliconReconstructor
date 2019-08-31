@@ -263,7 +263,7 @@ def pos_to_label(x, item_cmap):
 
 def xmap_to_SA_aln(xmapD,outdir,fname_prefix,ref_cmaps,contig_cmaps):
     seg_contig_count = {}
-    for fD in xmapD:
+    for xmap_id,fD in xmapD.iteritems():
         contig_id = fD["QryContigID"]
         seg_id = fD["RefContigID"]
         score = fD["Confidence"]
