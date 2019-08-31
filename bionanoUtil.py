@@ -291,7 +291,7 @@ def xmap_to_SA_aln(xmapD,outdir,fname_prefix,ref_cmaps,contig_cmaps):
             #write the last one and include total score
             i = alist[-1]
             outlist = [contig_id,seg_id,str(i[1]),str(i[0]),"+",orientation,"0",str(score),"0"]
-            outfile.write("\t".join(outlist))
+            outfile.write("\t".join(outlist)+"\n")
 
             
 #takes vector of cmap vector of positions, including the length of the map
