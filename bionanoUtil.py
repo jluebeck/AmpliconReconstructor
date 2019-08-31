@@ -120,7 +120,7 @@ def parse_xmap(xmapf):
 
 #Swap reference and query for a given xmap
 def swap_xmap_RQ(xmapD):
-    for fD in xmapD:
+    for xmap_id,fD in xmapD.iteritems():
         fD["QryLen"],fD["RefLen"] = fD["RefLen"],fD["QryLen"]
         fD["QryStartPos"],fD["RefStartPos"] = fD["RefStartPos"],fD["QryStartPos"]
         fD["QryEndPos"],fD["RefEndPos"] = fD["RefEndPos"],fD["QryEndPos"]
